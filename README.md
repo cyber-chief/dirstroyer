@@ -4,7 +4,7 @@ A small gobuster-like program designed to brue-force directories from web server
 python dirstroyer.py 
 dirstroyer.py -u <url> -o <output file> 
 
-#Options
+# Options
 -t  Threads
 -w  wordlist(Mandatory)
 -u  URL(Mandatory)
