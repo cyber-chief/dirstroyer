@@ -18,6 +18,10 @@ def main(argv):
     global URL
     global codes
     
+    if len(argv) == 0:
+        print 'dirstroyer.py -u <url> -o <output file> '
+        sys.exit(2)
+    
     try:
         opts,args = getopt.getopt(argv, "hw:o:t:u:sC:", ["wordlist=", "outputfile=", "threads=","url=", "statuscodes="])
     except getopt.GetoptError:
@@ -36,8 +40,7 @@ def main(argv):
             outputFile = arg
         elif opt in ("-sC", "--statuscodes"):
             codes = arg
-    if len(argv) == 0:
-        print 'dirstroyer.py -u <url> -o <output file> '
+   
     with concurrent.futures.ThreadPoolExecutor(max_workers=threads) as executor:
         future = executor.submit(dirstroy)
         future.result()
