@@ -19,17 +19,17 @@ def main(argv):
     global codes
     
     if len(argv) == 0:
-        print 'dirstroyer.py -u <url> -o <output file> '
+        print 'dirstroyer.py -u <url> -w <wordlist> '
         sys.exit(2)
     
     try:
         opts,args = getopt.getopt(argv, "hw:o:t:u:sC:", ["wordlist=", "outputfile=", "threads=","url=", "statuscodes="])
     except getopt.GetoptError:
-        print 'dirstroyer.py -u <url> -o <output file> '
+        print 'dirstroyer.py -u <url> -w <wordlist> '
         sys.exit(2)
     for opt, arg in opts:
         if opt == "-h":
-            print 'dirstroyer.py -u <url> -o <output file> '
+            print 'dirstroyer.py -u <url> -w <wordlist> '
         elif opt in ('-w', "--wordlist"):
             wordlist = arg
         elif opt in ("-u", "--url"):
